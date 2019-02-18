@@ -21,3 +21,12 @@ required headers: x-api-key
 required body: client_application_id
 required URL params: /:maker
 ```
+
+## Showroom - years by maker and model
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/years/:maker/:model
+required headers: x-api-key
+required body: client_application_id
+required URL params: /:maker/:model
+```
