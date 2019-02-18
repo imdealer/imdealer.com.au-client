@@ -159,3 +159,12 @@ endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.co
 required headers: x-api-key
 required body: client_application_id
 ```
+
+### Showroom - count total cars - filtered
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars_filtered/:maker/:model/:year/:transmission/:fuel/:states
+required headers: x-api-key
+required body: client_application_id
+required URL params: /:maker/:model/:year/:transmission/:fuel/:states
+```
