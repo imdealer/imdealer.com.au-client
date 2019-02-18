@@ -11,6 +11,7 @@ method: POST
 endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/makers
 required headers: x-api-key
 required body: client_application_id
+required URL params: N/A
 ```
 
 ## Showroom - models by maker
@@ -29,4 +30,13 @@ endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.co
 required headers: x-api-key
 required body: client_application_id
 required URL params: /:maker/:model
+```
+
+## Showroom - all user cars and photos of them
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars
+required headers: x-api-key
+required body: client_application_id
+required URL params: N/A
 ```
