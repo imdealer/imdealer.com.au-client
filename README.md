@@ -85,3 +85,13 @@ required headers: x-api-key
 required body: client_application_id
 required URL params: /:user_id
 ```
+
+### Signup - upload photo
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/photo/:for
+required headers: x-api-key
+required body: client_application_id
+required URL params: /:for
+excepted parameter values for /:for: 'dealer_profile'
+```
