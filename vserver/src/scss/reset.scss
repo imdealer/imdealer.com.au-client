@@ -1,0 +1,8 @@
+@import './variables.scss';
+
+*
+{
+  box-sizing: $reset-box-sizing;
+  margin: $reset-margin;
+  padding: $reset-padding;
+}
