@@ -10,7 +10,7 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const minimist = require('minimist');
 
-var knownOptions = {
+const knownOptions = {
   string: 'html',
   default: { html: 'index.html' }
 };
