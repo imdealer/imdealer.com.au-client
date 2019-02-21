@@ -17,6 +17,8 @@ npm install
 ```
 // dealer_product.html 을 원하는 파일명으로 바꾼다. (개발하고자 하는)
 npm run win -- --html dealer_product.html
+// Mac
+npm start -- --html dealer_product.html
 ```
 4. 자동으로 브라우저 창이 열린다.
 5. 끝. (종료는 control + c)
