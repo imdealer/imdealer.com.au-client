@@ -8,11 +8,20 @@ const del = require('del');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
+const minimist = require('minimist');
+
+var knownOptions = {
+  string: 'html',
+  default: { html: 'index.html' }
+};
+
+const options = minimist(process.argv.slice(2), knownOptions);
 
 function syncBrowser() {
   browserSync.init({
     server: {
-      baseDir: './src'
+      baseDir: './src',
+      index: options.html
     }
   });
 }
@@ -56,6 +65,10 @@ function copyFonts() {
   return gulp.src('./src/fonts/**/*').pipe(gulp.dest('./dist/fonts'));
 }
 
+function copyAssets() {
+  return gulp.src('./src/assets/**/*').pipe(gulp.dest('./dist/assets'));
+}
+
 function cleanDist(cb) {
   del.sync('./dist');
   cb();
@@ -68,4 +81,4 @@ function imageProcessing() {
 }
 
 exports.default = gulp.parallel(syncBrowser, compileSass, watchFiles);
-exports.build = gulp.series(cleanDist, gulp.parallel(userefTask, copyFonts, imageProcessing));
+exports.build = gulp.series(cleanDist, gulp.parallel(userefTask, copyFonts, imageProcessing, copyAssets));

@@ -1,6 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * 현재 사용하고있는 JavaScript build tool 이
+ * ES6는 자원을 하지 않고 있습니다. 
+ * (람다, 상수, let 변수 클래스 등등 사용 불가능, async/await 은 테스트x)
+ * 자세한 내용은...
+ * https://medium.com/@muthuks/difference-between-es-5-and-es-6-e993c7ab0a70
+ */
+document.addEventListener('DOMContentLoaded', function () {
 
-	const pageName = document.querySelector("#pageName").value;
+	var pageName = document.querySelector("#pageName").value;
 
 	switch (pageName) {
 		// 여기서 페이지들의 이름을 설정 하여 줍니다.

@@ -1,4 +1,4 @@
-function SingleProduct() {
+function SingleProduct () {
 
 }
 

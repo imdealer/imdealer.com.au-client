@@ -7,6 +7,20 @@ IMDEALER Client Application
 - JavaScript
 - jQuery
 
+## 가상서버 실행 방법
+1. 이 레포를 clone 한다.
+2. vserver 디렉토리에서 다음 명령어 수행
+```
+npm install
+```
+3. 그 다음 vserver 디렉토리에서 다음 명령어 수행
+```
+// dealer_product.html 을 원하는 파일명으로 바꾼다. (개발하고자 하는)
+npm run win -- --html dealer_product.html
+```
+4. 자동으로 브라우저 창이 열린다.
+5. 끝. (종료는 control + c)
+
 ## API
 Server API information
 
