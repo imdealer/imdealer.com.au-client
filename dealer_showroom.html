@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>imdealer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light">
+        <div class="container-fluid"><a class="navbar-brand text-dark" href="./"><i class="fa fa-home"></i></a><button class="navbar-toggler border rounded border-dark" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse text-align-right" id="navcol-1">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active text-dark" href="./">FAQ</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active text-dark" href="./">SHOWROOM</a></li>
+                </ul><span class="d-flex navbar-text font-weight-bold text-dark"><a href="./">SIGN IN</a></span></div>
+        </div>
+    </nav>
+    <header class="pt-4 pb-5 showroom-bg-img">
+        <div class="container-fluid px-5 py-3"><img src="assets/img/logo_text_only_all-white.svg" width="120px"></div>
+        <div class="text-center text-light display-2">
+            <h1 class="display-4">SHOWROOM</h1>
+        </div>
+        <div class="container-fluid form-row filter-container mt-3">
+            <div class="row">
+                <div class="col-6 col-md-4 filter-column"><select class="custom-select"><option value="make" selected="">make</option></select></div>
+                <div class="col-6 col-md-4 filter-column"><select class="custom-select"><option value="model" selected="">model</option></select></div>
+                <div class="col-6 col-md-4 filter-column"><select class="custom-select"><option value="year" selected="">year</option></select></div>
+                <div class="col-6 col-md-4 filter-column"><select class="custom-select"><option value="transmission" selected="">transmission</option></select></div>
+                <div class="col-6 col-md-4 filter-column"><select class="custom-select"><option value="states" selected="">states</option></select></div>
+                <div class="col-6 col-md-4 filter-column"><select class="custom-select"><option value="fuel" selected="">fuel</option></select></div>
+                <div class="col filter-column"><button class="btn btn-primary bg-imdealer border-0 w-25" type="button">search</button></div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid-endingsoon d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span>14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1">40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><span>VIEW</span><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000000000000000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid-endingsoon d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span>14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1">40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><span>VIEW</span><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid-endingsoon d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span>14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1">40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><span>VIEW</span><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-sm-6 p-3">
+                    <div class="showroom-items-col">
+                        <div class="showroom-items-bid d-flex justify-content-center font-weight-bold py-2 mb-2">
+                            <div class="mr-3"><span class="text-uppercase mr-1">bids:</span><span class="text-color-bid">14</span></div>
+                            <div><span class="text-uppercase mr-1">left:</span><span class="mr-1 text-color-bid">2h 40m</span></div>
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="image showroom-sample-image">
+                                <div class="button-overlay">
+                                    <div class="button"><i class="fa fa-external-link"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showroom-items-title">
+                            <h5 class="mr-1">2018</h5>
+                            <h5 class="mr-1">MAZDA</h5>
+                            <h5>CX-5</h5>
+                        </div>
+                        <div class="showroom-items-details">
+                            <div class="showroom-items-info">
+                                <div class="row">
+                                    <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>body type</span></div>
+                                    <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>fuel type</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Petrol</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>transmission</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Auto</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>rego expiry</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>07/2019</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>Location</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>Homebush</span></div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-6 showroom-items-details-title"><span>POSTCODE</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>2140</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="d-flex justify-content-center py-4">
+        <ul class="imdealer-pagination-style">
+            <li class="imdealer-page-link"><a href="./"><span class="imdealer-page-text">&lt;</span></a></li>
+            <li class="imdealer-page-link"><a href="./"><span class="imdealer-page-text-current">1</span></a></li>
+            <li class="imdealer-page-link"><a href="./"><span class="imdealer-page-text">2</span></a></li>
+            <li class="imdealer-page-link"><a href="./"><span class="imdealer-page-text">3</span></a></li>
+            <li class="imdealer-page-link"><a href="./"><span class="imdealer-page-text">&gt;</span></a></li>
+        </ul>
+    </div>
+    <footer class="bg-dark container-fluid">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center py-4"><img src="assets/img/RED-GREY-CIRCLE-trans-150x157.png" width="100px" height="100px"></div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center py-4"><a class="text-center border rounded-circle footer-social-icon" href="./"><i class="fa fa-facebook-f d-lg-flex"></i></a><a class="text-center border rounded-circle footer-social-icon" href="./"><i class="fa fa-instagram"></i></a><a class="text-center border rounded-circle footer-social-icon"
+                    href="./"><i class="fa fa-envelope-o"></i></a><a class="text-center border rounded-circle footer-social-icon" href="./"><i class="fa fa-wordpress"></i></a></div>
+        </div>
+    </footer>
+    <footer class="bg-black text-white-50 container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 order-lg-2 py-1 py-lg-3 text-center"><i class="fa fa-angle-double-up"></i></div>
+            <div class="col-lg-4 order-lg-1 py-1 py-lg-3 text-center"><span>COPYRIGHT © 2019 IMDEALER™ INC.</span></div>
+            <div class="col-lg-4 order-lg-3 py-1 py-lg-3 text-center"><span>BE WITH&nbsp;<i class="fa fa-heart text-danger"></i>&nbsp;IDEALIS GROUP</span></div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="assets/js/main.js"></script>
+    
+</body>
+
+</html>
