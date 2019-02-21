@@ -1,22 +1,67 @@
-$(function(){
-	console.log("테스트");
+document.addEventListener('DOMContentLoaded', () => {
+
+	const pageName = document.querySelector("#pageName").value;
+
+	switch (pageName) {
+		// 여기서 페이지들의 이름을 설정 하여 줍니다.
+		// 각 페이지의 실행 코드들은 ./page 폴더 안에 있습니다.
+		// 각 페이지 js 파일의 render 메서드가 실행됩니다. 
+		case 'Showroom': new Showroom().render(); break;
+		case 'SingleProduct': new SingleProduct().render(); break;
+		default: console.log('페이지 설정 오류.');
+	}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(function(){
+	// console.log("테스트");
 	
-	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/models/Alfa Romeo",
-		data: JSON.stringify({
-			client_application_id: 1
-		}),
-		headers: {
-			"Content-Type": "application/json",
-			"Accept": "application/json, text/plain, */*",
-			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
-		},
-		method: "POST",
-		success: function(result){
-			console.log("---------------");
-			callbackFunTest(result);
-		}
-	});
+	// $.ajax({
+	// 	url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/models/Alfa Romeo",
+	// 	data: JSON.stringify({
+	// 		client_application_id: 1
+	// 	}),
+	// 	headers: {
+	// 		"Content-Type": "application/json",
+	// 		"Accept": "application/json, text/plain, */*",
+	// 		"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
+	// 	},
+	// 	method: "POST",
+	// 	success: function(result){
+	// 		console.log("---------------");
+	// 		callbackFunTest(result);
+	// 	}
+	// });
 	
 	
 	
@@ -63,8 +108,8 @@ $(function(){
 //white-space: nowrap;
 //overflow: hidden;
 
-});
+// });
 
-function callbackFunTest(result){
+/* function callbackFunTest(result){
 	console.log(result);
-}
+} */

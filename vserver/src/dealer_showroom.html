@@ -70,7 +70,7 @@
                             <div class="showroom-items-info">
                                 <div class="row">
                                     <div class="col-6 showroom-items-details-title"><span>Odometer</span></div>
-                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000000000000000 km</span></div>
+                                    <div class="col-6 d-flex justify-content-end showroom-items-details-text"><span>70,000 km</span></div>
                                     <div class="clearfix"></div>
                                     <div class="col-6 showroom-items-details-title"><span>body type</span></div>
                                     <div class="col-6 text-uppercase d-flex justify-content-end showroom-items-details-text"><span>SUV</span></div>
@@ -628,10 +628,19 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="assets/js/main.js"></script>
-    
+
+    <!-- Custom scripts 여기부터 항상 복사해서 사용합니다. -->
+    <!-- 이 input 의 value 를 각 페이지마다 페이지 이름에 맞게 바꾸어 주어야 합니다. -->
+    <!-- 페이지의 이름은 main.js 에서 설정. -->
+    <input id="pageName" type="hidden" value="Showroom" />
+    <!-- 모든 HTML 페이지에 항상 동일하게 넣어주세요. js 파일이 추가 될 때마다 모든 HTML 파일을 그에 맞게 업데이트 시켜주어야 합니다. -->
+    <!-- 이렇게 하는이유는 빌드 하였을 때 모든 코드가 다 들어가게 하기 위함입니다. -->
+    <!-- build:js ./js/script.js -->
+    <script src="./js/pages/Showroom.js"></script>
+    <script src="./js/pages/SingleProduct.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- endbuild -->
+
 </body>
 
 </html>
