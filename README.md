@@ -16,7 +16,10 @@ npm install
 3. 그 다음 vserver 디렉토리에서 다음 명령어 수행
 ```
 // dealer_product.html 을 원하는 파일명으로 바꾼다. (개발하고자 하는)
+
+// Windows
 npm run win -- --html dealer_product.html
+
 // Mac
 npm start -- --html dealer_product.html
 ```
