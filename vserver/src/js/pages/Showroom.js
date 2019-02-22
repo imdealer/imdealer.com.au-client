@@ -5,22 +5,13 @@ function Showroom () {
 Showroom.prototype.render = function () {
   console.log('Showroom.prototype.render');
 
-  //쿠키 생성 테스트
-  Cookie.setCookie(Cookie.CAR_ID, "carIdTest", Cookie.EXPIRE_MAXIMUM);
-  console.log(Cookie.getCookie(Cookie.CAR_ID));
-  
-  //쿠키 삭제 테스트
-  Cookie.deleteCookie(Cookie.CAR_ID);
-  console.log(Cookie.getCookie(Cookie.CAR_ID));
+  $(function(){
+	  // 모든 페이지에서 이곳에 있는 함수 실행 문제.
+	  console.log('Execute Showroom.js');
+	  loadFilter();    // 필터값 불러오기
+	  eventListener(); // 이벤트 바인딩
+  });
 };
-
-
-$(function(){
-  // 모든 페이지에서 이곳에 있는 함수 실행 문제.
-	console.log('Execute Showroom.js');
-	loadFilter();    // 필터값 불러오기
-	eventListener(); // 이벤트 바인딩
-});
 
 
 /**
@@ -32,7 +23,7 @@ function loadFilter(){
 }
 
 /**
- * Car maker 불러오기
+ * Maker filter
  */
 function loadMaker(){
 	$.ajax({
@@ -53,7 +44,7 @@ function loadMaker(){
 }
 
 /**
- * 자동차 model 불러오기
+ * Model filter
  */
 function loadModel(){
 	var maker = $("#maker").val();
@@ -76,7 +67,7 @@ function loadModel(){
 }
 
 /**
- * 자동차 year 불러오기
+ * Year filter
  */
 function loadYear(){
 	var maker = $("#maker").val();
@@ -100,10 +91,32 @@ function loadYear(){
 }
 
 /**
+ * Transmission filter
+ */
+function loadTransmission(){
+	
+}
+
+/**
+ * States filter 
+ */
+function loadStates(){
+	
+}
+
+/**
+ * Fuel filter 
+ */
+function loadFuel(){
+	
+}
+
+
+/**
  * option 동적으로 생성하는 함수
  */
 function addOptions(resultList, key){
-	clearOption(key, key);
+	clearOption(key);
 	
 	for(var i=0; resultList != null && i<resultList.length; i++){
 		var value = resultList[i][key];
