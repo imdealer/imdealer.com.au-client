@@ -14,6 +14,7 @@ Cookie.EXPIRE_MINIMUM = 1;
 
 /**
  * 쿠키값 설정
+ * @param name(String), value(String), exp(Number)
  */
 Cookie.setCookie = function(name, value, exp){
 	
@@ -34,6 +35,7 @@ Cookie.setCookie = function(name, value, exp){
 
 /**
  * 쿠키값 얻기
+ * @param name(String)
  */
 Cookie.getCookie = function(name){
 	console.log(document.cookie);
@@ -44,6 +46,7 @@ Cookie.getCookie = function(name){
 
 /**
  * 쿠키값 삭제
+ * @Param name(String)
  */
 Cookie.deleteCookie = function(name){
 	var cookieVal = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');

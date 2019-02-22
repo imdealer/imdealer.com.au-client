@@ -13,3 +13,20 @@ Showroom.prototype.render = function () {
   Cookie.deleteCookie(Cookie.CAR_ID);
   console.log(Cookie.getCookie(Cookie.CAR_ID));
 };
+
+
+$(function(){
+	eventListener();
+});
+
+
+
+function eventListener(){
+	$(".showroom-items-col").click(function(){
+		var carId = $(this).attr("id");
+		Cookie.deleteCookie(Cookie.CAR_ID);
+		Cookie.setCookie(Cookie.CAR_ID, carId, Cookie.EXPIRE_MAXIMUM);
+		
+		location.href = "dealer_product.html";
+	});	
+}
