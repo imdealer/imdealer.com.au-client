@@ -4,14 +4,9 @@ function Showroom () {
 
 Showroom.prototype.render = function () {
   console.log('Showroom.prototype.render');
-
   $(function(){
-	  // 모든 페이지에서 이곳에 있는 함수 실행 문제.
-	  console.log('Execute Showroom.js');
-	  
 	  loadFilter();    // 필터값 불러오기
 	  loadContent();   // content 불러오기
-	  
 	  eventListener(); // 이벤트 바인딩
   });
 };
