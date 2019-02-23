@@ -8,7 +8,10 @@ Showroom.prototype.render = function () {
   $(function(){
 	  // 모든 페이지에서 이곳에 있는 함수 실행 문제.
 	  console.log('Execute Showroom.js');
+	  
 	  loadFilter();    // 필터값 불러오기
+	  loadContent();   // content 불러오기
+	  
 	  eventListener(); // 이벤트 바인딩
   });
 };
@@ -18,6 +21,13 @@ Showroom.prototype.render = function () {
  * 페이지 상단 필터 불러오기
  */
 function loadFilter(){
+	addOptions([], "maker");
+	addOptions([], "model");
+	addOptions([], "year");
+	addOptions([], "transmission");
+	addOptions([], "states");
+	addOptions([], "fuel");
+	
 	loadMaker();
 	
 }
@@ -111,6 +121,13 @@ function loadFuel(){
 	
 }
 
+/**
+ * Content
+ */
+function loadContent(){
+	
+}
+
 
 /**
  * option 동적으로 생성하는 함수
@@ -118,10 +135,17 @@ function loadFuel(){
 function addOptions(resultList, key){
 	clearOption(key);
 	
+	var optData = new Array();
 	for(var i=0; resultList != null && i<resultList.length; i++){
 		var value = resultList[i][key];
-		$("#"+key).append("<option value='" + value + "'>" + value + "</option>");
+		var opt = {id: value, text: value};
+		optData.push(opt);
 	}
+	
+	$("#" + key).select2({
+		data: optData,
+		placeholder: key
+	});
 }
 
 /**
@@ -129,7 +153,7 @@ function addOptions(resultList, key){
  */
 function clearOption(selectId){
 	$("#" + selectId + " option").remove();
-	$("#" + selectId).append("<option value=''>" + selectId + "</option>");
+	$("#" + selectId).append("<option></option>");
 }
 
 
@@ -138,8 +162,8 @@ function eventListener(){
 	$("#maker").on("change", function(){
 		loadModel();
 		
-		$("#model").attr("disabled", false);
-		$("#year").attr("disabled", true);
+		$("#model").prop("disabled", false);
+		$("#year").prop("disabled", true);
 		
 		clearOption("year");
 	});
