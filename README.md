@@ -91,13 +91,22 @@ required body: client_application_id
 required URL params: /:max_display/:page
 ```
 
-### Showroom - user cars - filltered
+### Showroom - user cars - filltered (deprecated)
 ```
 method: POST
 endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/:maker/:model/:year/:transmission/:fuel/:states
 required headers: x-api-key
 required body: client_application_id
 required URL params: /:maker/:model/:year/:transmission/:fuel/:states
+```
+
+### Showroom - user cars - filltered by page
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/:maker/:model/:year/:transmission/:fuel/:states/:max_display/:page
+required headers: x-api-key
+required body: client_application_id
+required URL params: /:maker/:model/:year/:transmission/:fuel/:states/:max_display/:page
 ```
 
 ### Showroom - user car - by id
@@ -150,4 +159,21 @@ required body: {
   state: string,
   postcode: string
 }
+```
+
+### Showroom - count total cars
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars
+required headers: x-api-key
+required body: client_application_id
+```
+
+### Showroom - count total cars - filtered
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars_filtered/:maker/:model/:year/:transmission/:fuel/:states
+required headers: x-api-key
+required body: client_application_id
+required URL params: /:maker/:model/:year/:transmission/:fuel/:states
 ```

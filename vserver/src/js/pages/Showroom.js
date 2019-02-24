@@ -8,11 +8,15 @@ Showroom.prototype.render = function () {
 	  console.log('Execute Showroom.js');
 	  
 	  loadFilter();    // 필터 불러오기
-	  loadContent();   // content 불러오기
-	  eventListener(); // 이벤트 바인딩
+	  loadContent(1);   // content 불러오기
+	  bindShowroomEventListener(); // 이벤트 바인딩
+	  
+	  renderPagination();
   });
 };
 
+var maxDisplay = 12; // 한 페이지에 보여질 아이템 개수
+var maxPage    = 5 ; // 네비게이션바에 보이는 페이지 개수
 
 /**
  * 페이지 상단 필터 불러오기
@@ -130,20 +134,7 @@ function loadFuel(){
 /**
  * Content
  */
-function loadContent(pPage){
-	var maxDisplay = 12;
-	
-	// 1. Page
-	var page = 1;
-	if(typeof pPage == "number"){
-		var maxPage = 100; // 임시값: 100 나중에 DB에서 값 가져오는 것으로 변경
-		
-		if(pPage > 0 && pPage <= maxPage){
-			page = pPage;
-		}
-	}
-	
-	// 2. Load data
+function loadContent(page){
 	$.ajax({
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
@@ -244,7 +235,7 @@ function lenderItem(itemList){
 /**
  * Search cars
  */
-function searchCars(){
+function searchCars(page){
 	var maker        = $("#maker").val();
 	var model        = $("#model").val();
 	var year         = $("#year").val();
@@ -262,8 +253,8 @@ function searchCars(){
 	
 	// 2. Search
 	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW", // test URL
-//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states,
+//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW", // test URL
+		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states + "/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
 			client_application_id: 1
 		}),
@@ -283,7 +274,36 @@ function searchCars(){
 /**
  * Pagination (라이브러리 쓰지 않는다면 page관리할 수 있는 js파일 분리해서 만들기)
  */
-function pagination(num){
+function renderPagination(){
+	// 1. 검색조건이 있는지 없는지 확인
+	
+	// 2. 검색조건에 있는경우와 업는 경우에 따라 분기
+	// if( 검색조건 없는 경우 ){  //검색조건 없는 경우
+	$.ajax({
+		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars",
+		data: JSON.stringify({
+			client_application_id: 1
+		}),
+		headers: {
+			"Content-Type": "application/json",
+			"Accept": "application/json, text/plain, */*",
+			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
+		},
+		method: "POST",
+		success: function(totalItems){
+			// 1) Pagination 생성
+			$("#pagination").makePagination(totalItems, maxDisplay, maxPage);
+			
+			// 2) 페이지 이동
+			//loadContent(Page.getCurrPage());
+		}
+	});
+	
+	// else( 검색조건 있는 경우) //검색조건 있는 경우
+		//$("#pagination").makePagination(totalItems, maxDisplay, maxPage);
+		//searchCars(Page.getCurrPage());
+	
+	//}
 	
 }
 
@@ -319,7 +339,7 @@ function clearOption(selectId){
 }
 
 
-function eventListener(){
+function bindShowroomEventListener(){
 	// maker
 	$("#maker").on("change", function(){
 		loadModel();
@@ -349,6 +369,6 @@ function eventListener(){
 	
 	// 검색
 	$("#searchBtn").on("click", function(){
-		searchCars();
+		searchCars(1);
 	})
 }

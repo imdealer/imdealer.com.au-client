@@ -6,6 +6,7 @@ function Common(value){}
  * 숫자 3자리마다 ',' 찍음
  */
 Common.addComma = function(num){
+	if(typeof num == "undefined") { num =0; } 
 	 var regexp = /\B(?=(\d{3})+(?!\d))/g;
 	 return num.toString().replace(regexp, ',');
 }
