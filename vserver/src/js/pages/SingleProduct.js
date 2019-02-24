@@ -19,7 +19,7 @@ SingleProduct.prototype.render = function () {
  */
 function loadCarDetails(){
 	var carId = Cookie.getCookie(Cookie.CAR_ID);
-	console.log(carId);
+	console.log("car_id==> " + carId);
 	
 	$.ajax({
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_car/" + carId, // test URL
@@ -42,7 +42,6 @@ function loadCarDetails(){
  * Show Car Details
  */
 function showCarDetails(carDetails){
-	console.log(carDetails);
 	
 	// Car Details
 	$("#productTitle").text(carDetails.year + " " + carDetails.maker + " " + carDetails.model + " " + carDetails.badge + " " + carDetails.series);
