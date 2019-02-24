@@ -33,11 +33,11 @@ npm start -- --html dealer_product.html
 ## Input Validation Rule
 > Dealer Signup
 - First name & Last name
-  only - 영어
-  x - 특수문자, 숫자
-  o - 띄어쓰기, 대문자, 소문자
-  min - 3
-  max - 30
+  - only - 영어
+  - x - 특수문자, 숫자
+  - o - 띄어쓰기, 대문자, 소문자
+  - min - 3
+  - max - 30
 
 ## API
 Server API information
