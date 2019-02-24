@@ -43,6 +43,12 @@ npm start -- --html dealer_product.html
 - Password
   - min - 6
   - max - 60
+- Confirm Password
+  - Password 랑 동일 해야 함
+- ABN
+  - only - 숫자
+  - min - 11
+  - max - 11
 
 ## API
 Server API information
