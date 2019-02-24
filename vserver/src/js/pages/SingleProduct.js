@@ -44,21 +44,23 @@ function loadCarDetails(){
 function showCarDetails(carDetails){
 	console.log(carDetails);
 	
-	// 2018 Mazda CX-5 Maxx Sport KF Series Auto i-ACTIV AWD
-	$("#productTitle h1").text(carDetails.year + " " + carDetails.maker + " " + carDetails.model + " " + carDetails.transmission);
+	// Car Details
+	$("#productTitle").text(carDetails.year + " " + carDetails.maker + " " + carDetails.model + " " + carDetails.badge + " " + carDetails.series);
 	$("#launch").text("No data");
 	$("#odometer").text(Common.addComma(carDetails.kilometers) + " km");
 	$("#bodyType").text("No data");
 	$("#fuel").text(carDetails.fuel_type);
 	$("#transmission").text(carDetails.transmission);
 	$("#color").text("No data");
-	$("#plateNumber").text(carDetails.registration_plat_number);
-//	$("#expiryTerm").text();
+	$("#plateNumber").text(carDetails.registration_plate_number);
 	$("#expiryDate").text(carDetails.registration_expiry_month + "/" + carDetails.registration_expiry_year);
 	$("#suburbs").text(carDetails.suburb);
 	$("#postcode").text(carDetails.post_code);
 	$("#sellerComment").text(carDetails.comment);
 	$("#imdealerComment").text("No data");	
+	
+	// Modal
+	$("#modalTitle").text(carDetails.year + " " + carDetails.maker + " " + carDetails.model + " " + carDetails.badge + " " + carDetails.series);
 }
 
 function bindSingleProductEventListener(){
