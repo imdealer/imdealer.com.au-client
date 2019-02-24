@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>imdealer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-light">
+        <div class="container-fluid"><a class="navbar-brand text-dark" href="./"><i class="fa fa-home"></i></a><button class="navbar-toggler border rounded border-dark" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse text-align-right" id="navcol-1">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active text-dark" href="./">FAQ</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active text-dark" href="./">SHOWROOM</a></li>
+                </ul><span class="d-flex navbar-text font-weight-bold text-dark"><a href="./" class="font-weight-bold text-dark">SIGN IN</a></span></div>
+        </div>
+    </nav>
+    <header class="pt-4 pb-5 dealer-signinup-bg-img">
+        <div class="container-fluid px-5 py-3"><img src="assets/img/logo_text_only_all-white.svg" width="120px"></div>
+        <div class="signup-form-container mt-3 mb-5">
+            <form method="post" class="form-container text-center bg-light py-5">
+                <h2 class="text-center text-capitalize text-dark font-weight-light"><strong>SIGN UP</strong></h2>
+                <h5 class="text-left text-capitalize text-dark mt-5 mb-3">personal Profile</h5>
+                <div class="image-holder"><img class="rounded-circle img-fluid border border-secondary" src="assets/img/add-image-icon-png-7.jpg" width="80px"></div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3 mb-md-0"><input class="form-control" type="text" name="First name" placeholder="First name"></div>
+                        <div class="col-md-6"><input class="form-control" type="text" name="Last name" placeholder="Last name"></div>
+                    </div>
+                </div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                <div class="form-group"><input class="form-control" type="password" name="confirm password" placeholder="Confirm Password"></div>
+                <div class="form-group"><input class="form-control" type="tel" name="Mobile number" placeholder="Mobile number"></div>
+                <h5 class="text-left text-capitalize text-dark mt-5 mb-4">Company Profile</h5>
+                <div class="form-group"><input class="form-control" type="text" name="Company ABN" placeholder="Company ABN"></div>
+                <div class="form-group"><input class="form-control" type="text" name="Dealer license no." placeholder="Dealer license no."></div>
+                <div class="form-group"><input class="form-control" type="text" name="Company name" placeholder="Company name"></div>
+                <div class="form-group"><input class="form-control" type="text" name="Street 1" placeholder="Street 1"></div>
+                <div class="form-group"><input class="form-control" type="text" name="Street 2" placeholder="Street 2"></div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-8 mb-3 mb-md-0"><input class="form-control" type="text" name="Suburbs" placeholder="Suburbs"></div>
+                        <div class="col-md-4"><select class="form-control" name="States" value="Choose..."><option value="ACT">ACT</option><option value="NSW" selected="">NSW</option><option value="NT">NT</option><option value="QLD">QLD</option><option value="SA">SA</option><option value="VIC">VIC</option><option value="WA">WA</option></select></div>
+                    </div>
+                </div>
+                <div class="form-group"><input class="form-control w-50" type="text" name="Postcode" placeholder="Postcode"></div>
+                <h5 class="text-left text-capitalize text-dark mt-5 mb-4">Comment</h5>
+                <div class="form-group"><textarea class="form-control h-50" placeholder="This comment will be shown to  customer"></textarea></div>
+                <div class="form-group"><button class="btn btn-primary btn-block mt-5 bg-imdealer border-0" type="submit">Sign up</button></div><span>By creating an account, you agree our&nbsp;<a href="./" class="link-inline">terms.</a></span></form>
+            <div class="form-container py-3 bg-light-grey"><a href="./" class="link bg-light-grey">Already a member?&nbsp;Sign in here.</a></div>
+        </div>
+    </header>
+    <div class="modal fade" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Terms and Conditions</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p>The content of your modal.</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center py-4"><img src="assets/img/RED-GREY-CIRCLE-trans-150x157.png" width="100px" height="100px"></div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center py-4"><a class="text-center border rounded-circle footer-social-icon" href="./"><i class="fa fa-facebook-f d-lg-flex"></i></a><a class="text-center border rounded-circle footer-social-icon" href="./"><i class="fa fa-instagram"></i></a><a class="text-center border rounded-circle footer-social-icon"
+                        href="./"><i class="fa fa-envelope-o"></i></a><a class="text-center border rounded-circle footer-social-icon" href="./"><i class="fa fa-wordpress"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <footer class="bg-black text-white-50 container-fluid">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-4 order-lg-2 py-1 py-lg-3 text-center"><i class="fa fa-angle-double-up"></i></div>
+                <div class="col-lg-4 order-lg-1 py-1 py-lg-3 text-center"><span>COPYRIGHT © 2019 IMDEALER™ INC.</span></div>
+                <div class="col-lg-4 order-lg-3 py-1 py-lg-3 text-center"><span>BE WITH&nbsp;<i class="fa fa-heart text-danger"></i>&nbsp;IDEALIS GROUP</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
