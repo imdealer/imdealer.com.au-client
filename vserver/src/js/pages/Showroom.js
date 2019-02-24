@@ -9,7 +9,7 @@ Showroom.prototype.render = function () {
 	  
 	  loadFilter();    // 필터 불러오기
 	  loadContent();   // content 불러오기
-	  eventListener(); // 이벤트 바인딩
+	  bindShowroomEventListener(); // 이벤트 바인딩
   });
 };
 
@@ -262,8 +262,8 @@ function searchCars(){
 	
 	// 2. Search
 	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW", // test URL
-//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states,
+//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW", // test URL
+		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states,
 		data: JSON.stringify({
 			client_application_id: 1
 		}),
@@ -319,7 +319,7 @@ function clearOption(selectId){
 }
 
 
-function eventListener(){
+function bindShowroomEventListener(){
 	// maker
 	$("#maker").on("change", function(){
 		loadModel();
