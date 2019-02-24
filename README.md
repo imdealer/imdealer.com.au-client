@@ -38,6 +38,9 @@ npm start -- --html dealer_product.html
   - o - 띄어쓰기, 대문자, 소문자
   - min - 3
   - max - 30
+  
+- Email
+  - email 전용 regular expression 사용
 
 ## API
 Server API information
