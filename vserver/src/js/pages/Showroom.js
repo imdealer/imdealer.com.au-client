@@ -150,6 +150,7 @@ function loadContent(page){
 			console.log("loadContent()");
 			console.log(result);
 			lenderItem(result);
+			renderPagination(page);
 		}
 	});
 }
@@ -255,6 +256,7 @@ function searchCars(page){
 	
 	// 2. Search
 	$.ajax({
+//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Audi/S4/2018/MANUAL/PETROL/NSW/12/1",
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states + "/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
 			client_application_id: 1
@@ -269,7 +271,7 @@ function searchCars(page){
 			console.log("searchCars()");
 			console.log(result);
 			lenderItem(result);
-			renderPagination();
+			renderPagination(page);
 		}
 	});
 	
@@ -278,7 +280,7 @@ function searchCars(page){
 /**
  * Pagination 
  */
-function renderPagination(){
+function renderPagination(currPage){
 	// 1. 검색조건이 있는지 없는지 확인
 	var maker        = $("#maker").val();
 	var model        = $("#model").val();
@@ -307,7 +309,7 @@ function renderPagination(){
 		method: "POST",
 		success: function(totalItems){
 			console.log( "totalItems==> " + totalItems );
-			$("#pagination").makePagination(totalItems, maxDisplay, maxPage);
+			$("#pagination").makePagination(totalItems, maxDisplay, maxPage, currPage);
 		}
 	});
 	
