@@ -52,11 +52,18 @@ function checkRequiredField(){
 }
 
 function bindSignUpEventListener(){
+	// 유효성 검사
 	$("#signupForm input").on("focusout", function(){
 		checkValidation( this );
 	});
 	
+	// 필수값 체크
 	$("#signup").on("click", function(){
 		checkRequiredField();
 	});
+	
+	//Sign in 페이지 이동
+	$("#signinLink").on("click", function(){
+		location.href = "dealer_signin.html";
+	})
 }
