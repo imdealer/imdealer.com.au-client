@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		// 각 페이지 js 파일의 render 메서드가 실행됩니다. 
 		case 'Showroom': new Showroom().render(); break;
 		case 'SingleProduct': new SingleProduct().render(); break;
+		case 'Signup': new Signup().render(); break;
 		default: console.log('페이지 설정 오류.');
 	}
 

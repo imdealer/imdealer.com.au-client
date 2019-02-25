@@ -136,7 +136,7 @@ function loadFuel(){
  */
 function loadContent(page){
 	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maxDisplay + "/" + page,
+		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maxDisplay + "/" + 5,
 		data: JSON.stringify({
 			client_application_id: 1
 		}),
@@ -147,6 +147,8 @@ function loadContent(page){
 		},
 		method: "POST",
 		success: function(result){
+			console.log("result!!!");
+			console.log(result);
 			lenderItem(result);
 		}
 	});
@@ -253,7 +255,7 @@ function searchCars(page){
 	
 	// 2. Search
 	$.ajax({
-//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW", // test URL
+//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW/12/1",
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states + "/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
 			client_application_id: 1
@@ -265,22 +267,34 @@ function searchCars(page){
 		},
 		method: "POST",
 		success: function(result){
+			console.log(result);
 			lenderItem(result);
+			renderPagination();
 		}
 	});
 	
 }
 
 /**
- * Pagination (라이브러리 쓰지 않는다면 page관리할 수 있는 js파일 분리해서 만들기)
+ * Pagination 
  */
 function renderPagination(){
 	// 1. 검색조건이 있는지 없는지 확인
+	var maker        = $("#maker").val();
+	var model        = $("#model").val();
+	var year         = $("#year").val();
+	var transmission = $("#transmission").val();
+	var states       = $("#states").val();
+	var fuel         = $("#fuel").val();
+	
 	
 	// 2. 검색조건에 있는경우와 업는 경우에 따라 분기
-	// if( 검색조건 없는 경우 ){  //검색조건 없는 경우
+	var ajaxURL = "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars";
+	if( isFiltered() ){
+		ajaxURL = "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states;
+	}
 	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars",
+		url: ajaxURL,
 		data: JSON.stringify({
 			client_application_id: 1
 		}),
@@ -291,20 +305,25 @@ function renderPagination(){
 		},
 		method: "POST",
 		success: function(totalItems){
-			// 1) Pagination 생성
+			console.log( totalItems );
 			$("#pagination").makePagination(totalItems, maxDisplay, maxPage);
-			
-			// 2) 페이지 이동
-			//loadContent(Page.getCurrPage());
 		}
 	});
 	
-	// else( 검색조건 있는 경우) //검색조건 있는 경우
-		//$("#pagination").makePagination(totalItems, maxDisplay, maxPage);
-		//searchCars(Page.getCurrPage());
+}
+
+/**
+ * 로드될 데이터가 검색조건이 있는지 아닌지 확인
+ */
+function isFiltered(){
+	var isSearchBtnClicekd = Common.parseBoolean($("#searchBtn").attr("attr-searched"));
+	var isFiltered = false; // url 분기
 	
-	//}
+	if( isSearchBtnClicekd && !Common.isEmpty($("#maker").val()) && !Common.isEmpty($("#model").val()) && !Common.isEmpty($("#year").val()) && !Common.isEmpty($("#transmission").val()) && !Common.isEmpty($("#states").val()) && !Common.isEmpty($("#fuel").val()) ){
+		isFiltered = true;
+	}
 	
+	return isFiltered;
 }
 
 
@@ -357,7 +376,6 @@ function bindShowroomEventListener(){
 		$("#year").attr("disabled", false);
 	});
 	
-	
 	// 자동차 리스트 아이템 클릭했을때 페이지 이동
 	$("#contentRow").on("click", ".showroom-items-col",  function(){
 		var carId = $(this).attr("id");
@@ -369,6 +387,18 @@ function bindShowroomEventListener(){
 	
 	// 검색
 	$("#searchBtn").on("click", function(){
+		$(this).attr("attr-searched", true);
 		searchCars(1);
+	})
+	
+	// 페이지 이동
+	$("#pagination").on("click", ".imdealer-page-link span", function(){
+		console.log("page==> " + Page.getCurrPage());
+		var currPage = Page.getCurrPage();
+		if( isFiltered() ){
+			searchCars( currPage );
+		}else{
+			loadContent( currPage );
+		}
 	})
 }

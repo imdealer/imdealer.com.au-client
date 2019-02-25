@@ -22,3 +22,14 @@ Common.isEmpty = function(param){
 		return false;
 	}
 }
+
+/**
+ * String을 Boolean(true, false)으로 변경 
+ */
+Common.parseBoolean = function(param){
+	if( !Common.isEmpty(param) && param.toUpperCase() == "TRUE" ){
+		return true;
+	} else{
+		return false;
+	}
+}
