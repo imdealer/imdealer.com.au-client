@@ -49,6 +49,26 @@ npm start -- --html dealer_product.html
   - only - 숫자
   - min - 11
   - max - 11
+- Dealer license no.
+  - min - 3
+  - max - 30
+- Company name
+  - min - 3
+  - max - 50
+- Street 1
+  - min - 1
+  - max - 100
+- Street 2
+  - min - 1
+  - max - 100
+- Suburbs
+  - min - 3
+  - max - 30
+- Postcode
+  - min - 3
+  - max - 5
+- Comment (필수사항 아님)
+
 
 ## API
 Server API information
