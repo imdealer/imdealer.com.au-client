@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>imdealer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />  <!-- Select2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC">
@@ -26,33 +25,20 @@
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active text-dark" href="./">FAQ</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active text-dark" href="./">SHOWROOM</a></li>
-                </ul><span class="d-flex navbar-text font-weight-bold text-dark"><a href="./">SIGN IN</a></span></div>
+                </ul><span class="d-flex navbar-text font-weight-bold text-dark"><a href="./" class="font-weight-bold text-dark">SIGN UP</a></span></div>
         </div>
     </nav>
-    <header class="pt-4 pb-5 showroom-bg-img">
+    <header class="pt-4 pb-5 dealer-signinup-bg-img">
         <div class="container-fluid px-5 py-3"><img src="assets/img/logo_text_only_all-white.svg" width="120px"></div>
-        <div class="text-center text-light display-2">
-            <h1 class="display-4">HELLO</h1>
-        </div>
-        <div class="container-fluid form-row filter-container mt-3">
-            <div class="row">
-                <div class="col-6 col-md-4 filter-column"><select class="custom-select" id="maker"><option></option></select></div>
-                <div class="col-6 col-md-4 filter-column"><select class="custom-select" id="model" disabled><option></option></select></div>
-                <div class="col-6 col-md-4 filter-column"><select class="custom-select" id="year" disabled><option></option></select></div>
-                <div class="col-6 col-md-4 filter-column"><select class="custom-select" id="transmission"><option></option></select></div>
-                <div class="col-6 col-md-4 filter-column"><select class="custom-select" id="states"><option></option></select></div>
-                <div class="col-6 col-md-4 filter-column"><select class="custom-select" id="fuel"><option></option></select></div>
-                <div class="col filter-column"><button id="searchBtn" class="btn btn-primary bg-imdealer border-0 w-25" type="button" attr-searched=false>search</button></div>
-            </div>
+        <div class="signup-form-container mt-3 mb-5">
+            <form method="post" class="form-container mt-3 text-center bg-light">
+                <h2 class="text-center text-capitalize text-dark font-weight-light mb-4"><strong>SIGN IN</strong></h2>
+                <div class="form-group"><input class="form-control mt-5" type="email" name="email" placeholder="Email"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                <div class="form-group"><button class="btn btn-primary btn-block mt-5 bg-imdealer border-0" type="submit">Sign in</button></div><a href="./" class="link mb-3">Forgot your email or password?</a></form>
+            <div class="form-container py-3 bg-light-grey"><a href="./" class="link">Not a member? Click here.</a></div>
         </div>
     </header>
-    <section>
-        <div class="container mt-3">
-            <div id="contentRow" class="row">
-            </div>
-        </div>
-    </section>
-    	<div id="pagination"></div>
     <footer class="bg-dark container-fluid">
         <div class="row">
             <div class="col-md-6 d-flex justify-content-center py-4"><img src="assets/img/RED-GREY-CIRCLE-trans-150x157.png" width="100px" height="100px"></div>
@@ -68,26 +54,7 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> <!-- Select2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom scripts 여기부터 항상 복사해서 사용합니다. -->
-    <!-- 이 input 의 value 를 각 페이지마다 페이지 이름에 맞게 바꾸어 주어야 합니다. -->
-    <!-- 페이지의 이름은 main.js 에서 설정. -->
-    <input id="pageName" type="hidden" value="Showroom" />
-    <!-- 모든 HTML 페이지에 항상 동일하게 넣어주세요. js 파일이 추가 될 때마다 모든 HTML 파일을 그에 맞게 업데이트 시켜주어야 합니다. -->
-    <!-- 이렇게 하는이유는 빌드 하였을 때 모든 코드가 다 들어가게 하기 위함입니다. -->
-    <!-- build:js ./js/script.js -->
-    <script src="./js/pages/Showroom.js"></script>
-    <script src="./js/pages/SingleProduct.js"></script>
-    <script src="./js/pages/Signup.js"></script>
-    <script src="./js/pages/Signin.js"></script>
-    <script src="./js/models/cookie.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/page.js"></script>
-    <script src="./js/main.js"></script>
-    <!-- endbuild -->
-
 </body>
 
 </html>
