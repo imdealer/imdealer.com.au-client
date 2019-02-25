@@ -136,7 +136,7 @@ function loadFuel(){
  */
 function loadContent(page){
 	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maxDisplay + "/" + 5,
+		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
 			client_application_id: 1
 		}),
@@ -147,7 +147,7 @@ function loadContent(page){
 		},
 		method: "POST",
 		success: function(result){
-			console.log("result!!!");
+			console.log("loadContent()");
 			console.log(result);
 			lenderItem(result);
 		}
@@ -255,7 +255,6 @@ function searchCars(page){
 	
 	// 2. Search
 	$.ajax({
-//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Alfa Romeo/159/2011/AUTO/DIESEL/NSW/12/1",
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states + "/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
 			client_application_id: 1
@@ -267,6 +266,7 @@ function searchCars(page){
 		},
 		method: "POST",
 		success: function(result){
+			console.log("searchCars()");
 			console.log(result);
 			lenderItem(result);
 			renderPagination();
@@ -291,8 +291,9 @@ function renderPagination(){
 	// 2. 검색조건에 있는경우와 업는 경우에 따라 분기
 	var ajaxURL = "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars";
 	if( isFiltered() ){
-		ajaxURL = "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states;
+		ajaxURL = "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/count/user_cars_filtered/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states;
 	}
+	
 	$.ajax({
 		url: ajaxURL,
 		data: JSON.stringify({
@@ -305,7 +306,7 @@ function renderPagination(){
 		},
 		method: "POST",
 		success: function(totalItems){
-			console.log( totalItems );
+			console.log( "totalItems==> " + totalItems );
 			$("#pagination").makePagination(totalItems, maxDisplay, maxPage);
 		}
 	});
@@ -326,6 +327,20 @@ function isFiltered(){
 	return isFiltered;
 }
 
+/**
+ * 페이지 이동
+ * page.js에서 페이지 생성할 경우 필수 함수
+ * page.js에서 페이지 이동 후 goPage() 호출하는 구조로 되어있음
+ */
+function goPage(){
+	var currPage = Page.getCurrPage();
+	if( isFiltered() ){
+		searchCars( currPage );
+	}else{
+		loadContent( currPage );
+	}
+	
+};
 
 /**
  * option 동적으로 생성하는 함수
@@ -389,16 +404,5 @@ function bindShowroomEventListener(){
 	$("#searchBtn").on("click", function(){
 		$(this).attr("attr-searched", true);
 		searchCars(1);
-	})
-	
-	// 페이지 이동
-	$("#pagination").on("click", ".imdealer-page-link span", function(){
-		console.log("page==> " + Page.getCurrPage());
-		var currPage = Page.getCurrPage();
-		if( isFiltered() ){
-			searchCars( currPage );
-		}else{
-			loadContent( currPage );
-		}
 	})
 }

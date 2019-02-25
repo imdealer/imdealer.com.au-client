@@ -27,7 +27,8 @@ Page.getCurrPage = function(){
  *         maxPage   : 네비게이션바에 보이는 페이지 개수 (Default : 5)
  *
  * @함수사용법 html: <div id="pagination"></div>
- * 				js  : $("#pagination").makePagination(totalItmes, maxDisplay, maxPage);
+ * 				js  : 1) 페이지네이션 생성 $("#pagination").makePagination(totalItmes, maxDisplay, maxPage);
+ *                    2) 필수 함수: goPage() 페이지 이동 후 데이터 로드되는 부분 
  */
 $.prototype.makePagination = function(totalItems, maxDisplay, pMaxPage){
 //	totalItems = 82;
@@ -96,8 +97,6 @@ function renderPageNav(startNo){
  *         obj  : 페이지가 선택되었다면 해당 페이지 객체
  */
 function changeCurrPage(goCnt, obj){
-	console.log("changeCurrPage()");
-	
 	var currPageGroup   = parseInt((currPage-1)/maxPage);
 	var changePageGroup = 1;
 	
@@ -119,18 +118,20 @@ function changeCurrPage(goCnt, obj){
 		if( typeof obj == "undefined" ){ 
 			obj = $("li>span:eq(" + ((currPage-1)%maxPage+2) +  ")"); 
 		}
-		currPage = $(obj).text();
 	} else{
-		console.log("different!! " + currPage);
 		renderPageNav((changePageGroup)*maxPage+1);
 
 		if( typeof obj == "undefined" ){ 
 			obj = $("li>span:eq(" + ((currPage-1)%maxPage+2) +  ")"); 
-//			obj = $("li>span:eq(2)"); 
 		}
 		
 	}
-		$("li span").removeClass("imdealer-page-text-current").addClass("imdealer-page-text");
-		$(obj).addClass("imdealer-page-text-current");
+	currPage = $(obj).text();
+
+	$("li span").removeClass("imdealer-page-text-current").addClass("imdealer-page-text");
+	$(obj).addClass("imdealer-page-text-current");
+	
+	// 3. 호출한 페이지의 함수 호출
+	goPage();
 }
 
