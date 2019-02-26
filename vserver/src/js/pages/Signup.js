@@ -36,7 +36,14 @@ function checkValidation(obj){
 			return false;
 		}
 		
-	} else if( inputType == "password" ){
+	} else if( inputType == "email" ){
+		if( !/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(str) ){
+			alert( $(obj).attr("placeholder") + " 형식에 맞지 않습니다.");
+			$(obj).focus();
+			return false;
+		}
+		
+	}else if( inputType == "password" ){
 		// 1) 길이제한 (min:6, max: 30)
 		if( strLength < 6 || strLength > 30 ){
 			alert( $(obj).attr("placeholder") + "는 6자 이상 30자 입니다.");
