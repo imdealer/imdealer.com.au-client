@@ -75,7 +75,7 @@ function renderPageNav(startNo, currNo){
 	// 2. 숫자부분 생성
 	var endNo = ( startNo+maxPage > lastPageNo )? lastPageNo+1:startNo+maxPage;
 	for(var i= startNo; i<endNo; i++){
-		var currentPageClass = (i==currPage)? "imdealer-page-text-current" : "imdealer-page-text";
+		var currentPageClass = (i==currNo)? "imdealer-page-text-current" : "imdealer-page-text";
 		$(pageNav).append($("<li>").addClass("imdealer-page-link")
 					.append($("<span>").attr({"onclick": "changeCurrPage('page', " + i + ")"}).addClass(currentPageClass).text(i)));
 	}

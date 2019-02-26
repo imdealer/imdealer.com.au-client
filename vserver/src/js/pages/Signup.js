@@ -160,7 +160,7 @@ function doSignup(){
 //	}));
 //	  
 	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer",
+		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer_signup",
 		data: JSON.stringify({
 			client_application_id: 1,
 			first_name           : $("input[name='first_name']").val(),
@@ -177,6 +177,7 @@ function doSignup(){
 			suburb               : $("input[name='suburb']").val(),
 			state                : $("input[name='state']").val(),
 			postcode             : $("input[name='postcode']").val()
+//			uploading_file       : file object
 		}),
 		headers: {
 			"Content-Type": "application/json",
@@ -197,10 +198,18 @@ function bindSignUpEventListener(){
 	});
 	
 	// Sign up
-	$("#signup").on("click", function(){
+//	$("#signup").on("click", function(){
+//		var isvalid = checkRequiredField(); // 필수값 체크
+//		if( isvalid ){  doSignup() };
+//		
+//	});
+	
+	// Sign up
+	$("#signupForm").submit(function( event ) {
+		event.preventDefault();
+		  
 		var isvalid = checkRequiredField(); // 필수값 체크
-		if( isvalid ){  doSignup() };
-		
+			if( isvalid ){ doSignup() };
 	});
 	
 	//Sign in 페이지 이동

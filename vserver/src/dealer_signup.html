@@ -34,7 +34,10 @@
             <form id="signupForm" class="form-container text-center bg-light py-5" onsubmit="return false;">
                 <h2 class="text-center text-capitalize text-dark font-weight-light"><strong>SIGN UP</strong></h2>
                 <h5 class="text-left text-capitalize text-dark mt-5 mb-3">personal Profile</h5>
-                <div class="image-holder"><img class="rounded-circle img-fluid border border-secondary" src="assets/img/add-image-icon-png-7.jpg" width="80px"></div>
+                <div class="image-holder">
+                	<img class="rounded-circle img-fluid border border-secondary" src="assets/img/add-image-icon-png-7.jpg" width="80px">
+                	<input type="file" name="uploading_file" />
+                </div>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6 mb-3 mb-md-0"><input class="form-control" type="text" id="firstName" name="first_name" placeholder="First name"></div>
@@ -60,7 +63,8 @@
                 <div class="form-group"><input class="form-control w-50" type="text" id="postCode" name="postcode" placeholder="Postcode"></div>
                 <h5 class="text-left text-capitalize text-dark mt-5 mb-4" id="comment" name="comment">Comment</h5>
                 <div class="form-group"><textarea class="form-control h-50" placeholder="This comment will be shown to  customer"></textarea></div>
-                <div class="form-group"><button class="btn btn-primary btn-block mt-5 bg-imdealer border-0" id="signup">Sign up</button></div><span>By creating an account, you agree our&nbsp;<a href="./" class="link-inline">terms.</a></span></form>
+                <div class="form-group"><input type="submit" class="btn btn-primary btn-block mt-5 bg-imdealer border-0" id="signup" value="Sign up"></div><span>By creating an account, you agree our&nbsp;<a href="./" class="link-inline">terms.</a></span></form>
+<!--                 <div class="form-group"><button class="btn btn-primary btn-block mt-5 bg-imdealer border-0" id="signup">Sign up</button></div><span>By creating an account, you agree our&nbsp;<a href="./" class="link-inline">terms.</a></span></form> -->
             <div class="form-container py-3 bg-light-grey"><a id="signinLink" href="#" class="link bg-light-grey">Already a member?&nbsp;Sign in here.</a></div>
         </div>
     </header>
