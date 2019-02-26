@@ -140,7 +140,10 @@ function checkRequiredField(){
  * Sign up
  */
 function doSignup(){
-//	console.log("doSignup()");
+	console.log("doSignup()");
+	
+	console.log( $("input[name='uploading_file']").val() );
+
 //	console.log(JSON.stringify({
 //		client_application_id: 1,
 //		first_name           : $("input[name='first_name']").val(),
@@ -156,39 +159,44 @@ function doSignup(){
 //		street2              : $("input[name='street2']").val(),
 //		suburb               : $("input[name='suburb']").val(),
 //		state                : $("input[name='state']").val(),
-//		postcode             : $("input[name='postcode']").val()
+//		postcode             : $("input[name='postcode']").val(),
+//		uploading_file       : $("input[name='uploading_file']").val()
 //	}));
+	
+//	const formData = new FormData();
+//    formData.append('uploading_file', this.uploadingFile.current.files[0]);
+//    formData.append('email', document.querySelector('input[name="email"]').value);
 //	  
-	$.ajax({
-		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer_signup",
-		data: JSON.stringify({
-			client_application_id: 1,
-			first_name           : $("input[name='first_name']").val(),
-			last_name            : $("input[name='last_name']").val(),
-			email                : $("input[name='email']").val(),
-			password             : $("input[name='password']").val(),
-			mobile_number        : $("input[name='mobile_number']").val(),
-			comment              : $("input[name='comment']").val(),
-			company_name         : $("input[name='company_name']").val(),
-			abn                  : $("input[name='abn']").val(),
-			dealer_license_number: $("input[name='dealer_license_number']").val(),
-			street1              : $("input[name='street1']").val(),
-			street2              : $("input[name='street2']").val(),
-			suburb               : $("input[name='suburb']").val(),
-			state                : $("input[name='state']").val(),
-			postcode             : $("input[name='postcode']").val()
-//			uploading_file       : file object
-		}),
-		headers: {
-			"Content-Type": "application/json",
-			"Accept": "application/json, text/plain, */*",
-			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
-		},
-		method: "POST",
-		success: function(result){
-			console.log(result);
-		}
-	});
+//	$.ajax({
+//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer_signup",
+//		data: JSON.stringify({
+//			client_application_id: 1,
+//			first_name           : $("input[name='first_name']").val(),
+//			last_name            : $("input[name='last_name']").val(),
+//			email                : $("input[name='email']").val(),
+//			password             : $("input[name='password']").val(),
+//			mobile_number        : $("input[name='mobile_number']").val(),
+//			comment              : $("input[name='comment']").val(),
+//			company_name         : $("input[name='company_name']").val(),
+//			abn                  : $("input[name='abn']").val(),
+//			dealer_license_number: $("input[name='dealer_license_number']").val(),
+//			street1              : $("input[name='street1']").val(),
+//			street2              : $("input[name='street2']").val(),
+//			suburb               : $("input[name='suburb']").val(),
+//			state                : $("input[name='state']").val(),
+//			postcode             : $("input[name='postcode']").val(),
+//			uploading_file       : $("input[name='uploading_file']").val()
+//		}),
+//		headers: {
+//			"Content-Type": "application/json",
+//			"Accept": "application/json, text/plain, */*",
+//			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
+//		},
+//		method: "POST",
+//		success: function(result){
+//			console.log(result);
+//		}
+//	});
 }
 
 function bindSignUpEventListener(){
@@ -198,18 +206,12 @@ function bindSignUpEventListener(){
 	});
 	
 	// Sign up
-//	$("#signup").on("click", function(){
-//		var isvalid = checkRequiredField(); // 필수값 체크
-//		if( isvalid ){  doSignup() };
-//		
-//	});
-	
-	// Sign up
 	$("#signupForm").submit(function( event ) {
 		event.preventDefault();
 		  
 		var isvalid = checkRequiredField(); // 필수값 체크
-			if( isvalid ){ doSignup() };
+//		if( isvalid ){ doSignup() };
+		 doSignup();
 	});
 	
 	//Sign in 페이지 이동

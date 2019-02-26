@@ -31,12 +31,12 @@
     <header class="pt-4 pb-5 dealer-signinup-bg-img">
         <div class="container-fluid px-5 py-3"><img src="assets/img/logo_text_only_all-white.svg" width="120px"></div>
         <div class="signup-form-container mt-3 mb-5">
-            <form id="signupForm" class="form-container text-center bg-light py-5" onsubmit="return false;">
+            <form id="signupForm" class="form-container text-center bg-light py-5" method="post" enctype="multipart/form-data" action="">
                 <h2 class="text-center text-capitalize text-dark font-weight-light"><strong>SIGN UP</strong></h2>
                 <h5 class="text-left text-capitalize text-dark mt-5 mb-3">personal Profile</h5>
                 <div class="image-holder">
                 	<img class="rounded-circle img-fluid border border-secondary" src="assets/img/add-image-icon-png-7.jpg" width="80px">
-                	<input type="file" name="uploading_file" />
+                	<input type="file" id="uploadingFile" name="uploading_file" accept=".jpg, .jpeg, .png" placeholder="photo"/>
                 </div>
                 <div class="form-group">
                     <div class="form-row">
