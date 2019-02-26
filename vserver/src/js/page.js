@@ -104,29 +104,16 @@ function changeCurrPage(goCnt, obj){
 	
 	// 1. <<, <, >, >> 로 이동하는 경우 계산
 	if( typeof goCnt == "number" ){
-		currPage = parseInt(currPage) + goCnt; 
+		currPage = parseInt(currPage) + goCnt;
 		
 		if( currPage < 1 ){
 			currPage = 1;
-		} else if( currPage > lastPageNo ){ 
+		}else if( currPage > lastPageNo ){
 			currPage = lastPageNo;
 		}
-		
-		changePageGroup = parseInt((currPage-1)/maxPage);
 	}
 	
-	// 2. 현재페이지 계산하여 클래스 변경
-	if( typeof obj == "undefined" ){ 
-		obj = $("li>span:eq(" + ((currPage-1)%maxPage+2) +  ")"); 
-	}
-
-	if( currPageGroup == changePageGroup ){ // 이동 될 페이지가 같은 그룹인 경우
-		currPage = $(obj).text();
-	} else{
-		currPage = (changePageGroup)*maxPage+1;
-	}
-
-	// 3. 호출한 페이지의 함수 호출
+	// 2. 호출한 페이지의 함수 호출
 	goPage();
 }
 
