@@ -68,24 +68,23 @@ function renderPageNav(startNo, currNo){
 	// 1. << , < 생성
 	var pageNav = $("<ul>").addClass("imdealer-pagination-style")
 					.append($("<li>").addClass("imdealer-page-link")
-							.append($("<span>").attr({"onclick": "changeCurrPage(" + -maxPage +")"}).addClass("imdealer-page-text").text("<<")))
+							.append($("<span>").attr({"onclick": "changeCurrPage('arrow', " + -maxPage +")"}).addClass("imdealer-page-text").text("<<")))
 					.append($("<li>").addClass("imdealer-page-link")
-							.append($("<span>").attr({"onclick": "changeCurrPage(-1)"}).addClass("imdealer-page-text").text("<")));
+							.append($("<span>").attr({"onclick": "changeCurrPage('arrow', -1)"}).addClass("imdealer-page-text").text("<")));
 	
 	// 2. 숫자부분 생성
 	var endNo = ( startNo+maxPage > lastPageNo )? lastPageNo+1:startNo+maxPage;
 	for(var i= startNo; i<endNo; i++){
 		var currentPageClass = (i==currPage)? "imdealer-page-text-current" : "imdealer-page-text";
-		
 		$(pageNav).append($("<li>").addClass("imdealer-page-link")
-					.append($("<span>").attr({"onclick": "changeCurrPage(0, this)"}).addClass(currentPageClass).text(i)));
+					.append($("<span>").attr({"onclick": "changeCurrPage('page', " + i + ")"}).addClass(currentPageClass).text(i)));
 	}
 	
 	// 3. >, >> 생성
 	$(pageNav).append($("<li>").addClass("imdealer-page-link")
-					.append($("<span>").attr({"onclick": "changeCurrPage(1)"}).addClass("imdealer-page-text").text(">")))
+					.append($("<span>").attr({"onclick": "changeCurrPage('arrow', 1)"}).addClass("imdealer-page-text").text(">")))
 			  .append($("<li>").addClass("imdealer-page-link")
-					.append($("<span>").attr({"onclick": "changeCurrPage(" + maxPage +")"}).addClass("imdealer-page-text").text(">>")));
+					.append($("<span>").attr({"onclick": "changeCurrPage('arrow', " + maxPage +")"}).addClass("imdealer-page-text").text(">>")));
 
 	
 	$(pageObj).text("");
@@ -95,15 +94,17 @@ function renderPageNav(startNo, currNo){
 /**
  * 현재페이지 계산하여 스타일 변경 및 currPage 변수에 저장
  * 
- * @Param goCnt: 얼마만큼 이동을 원하는지
- *         obj  : 페이지가 선택되었다면 해당 페이지 객체
+ * @Param  type : page, arrow
+ * 			goCnt: 얼마만큼 이동을 원하는지
  */
-function changeCurrPage(goCnt, obj){
+function changeCurrPage(type, goCnt){
 	var currPageGroup   = parseInt((currPage-1)/maxPage);
 	var changePageGroup = 1;
 	
 	// 1. <<, <, >, >> 로 이동하는 경우 계산
-	if( typeof goCnt == "number" ){
+	if( type == "page" ){
+		currPage = goCnt;
+	} else {
 		currPage = parseInt(currPage) + goCnt;
 		
 		if( currPage < 1 ){
