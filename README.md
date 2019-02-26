@@ -168,7 +168,7 @@ required URL params: /:for
 excepted parameter values for /:for: 'dealer_profile'
 ```
 
-### Dealer Signup
+### Dealer Signup (deprecated)
 ```
 method: POST
 endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer
@@ -191,6 +191,30 @@ required body: {
   postcode: string
 }
 ```
+
+### Dealer Signup
+```
+method: POST
+endpoint: http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer_signup
+required headers: x-api-key
+required body: {
+  client_application_id: int
+  first_name: string,
+  last_name: string,
+  email: string,
+  password: string,
+  mobile_number: string,
+  comment: string,
+  company_name: string,
+  abn: string,
+  dealer_license_number: string,
+  street1: string,
+  street2: string,
+  suburb: string,
+  state: string,
+  postcode: string,
+  uploading_file: file object
+}
 
 ### Showroom - count total cars
 ```
