@@ -31,8 +31,6 @@ Page.getCurrPage = function(){
  *                    2) 필수 함수: goPage() 페이지 이동 후 데이터 로드되는 부분 
  */
 $.prototype.makePagination = function(totalItems, maxDisplay, pMaxPage, currPage){
-//	totalItems = 82;
-
 	// 1. default 값 생성
 	if(typeof totalItems != "number" || totalItems < 0){ 
 		totalItems = 0; 
@@ -58,7 +56,7 @@ $.prototype.makePagination = function(totalItems, maxDisplay, pMaxPage, currPage
 	
 	// 3. 페이지 네비게이션 바 생성
 	pageObj = this;
-	renderPageNav(1, currPage);
+	renderPageNav( parseInt((currPage-1)/maxPage)*maxPage+1, currPage);
 	
 }
 
@@ -118,23 +116,16 @@ function changeCurrPage(goCnt, obj){
 	}
 	
 	// 2. 현재페이지 계산하여 클래스 변경
-	if( currPageGroup == changePageGroup ){ // 이동 될 페이지가 같은 그룹인 경우
-		if( typeof obj == "undefined" ){ 
-			obj = $("li>span:eq(" + ((currPage-1)%maxPage+2) +  ")"); 
-		}
-	} else{
-		renderPageNav((changePageGroup)*maxPage+1);
-
-		if( typeof obj == "undefined" ){ 
-			obj = $("li>span:eq(" + ((currPage-1)%maxPage+2) +  ")"); 
-		}
-		
+	if( typeof obj == "undefined" ){ 
+		obj = $("li>span:eq(" + ((currPage-1)%maxPage+2) +  ")"); 
 	}
-	currPage = $(obj).text();
 
-	$("li span").removeClass("imdealer-page-text-current").addClass("imdealer-page-text");
-	$(obj).addClass("imdealer-page-text-current");
-	
+	if( currPageGroup == changePageGroup ){ // 이동 될 페이지가 같은 그룹인 경우
+		currPage = $(obj).text();
+	} else{
+		currPage = (changePageGroup)*maxPage+1;
+	}
+
 	// 3. 호출한 페이지의 함수 호출
 	goPage();
 }

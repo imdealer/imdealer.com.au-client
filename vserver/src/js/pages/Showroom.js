@@ -10,8 +10,6 @@ Showroom.prototype.render = function () {
 	  loadFilter();    // 필터 불러오기
 	  loadContent(1);   // content 불러오기
 	  bindShowroomEventListener(); // 이벤트 바인딩
-	  
-	  renderPagination();
   });
 };
 
@@ -256,7 +254,6 @@ function searchCars(page){
 	
 	// 2. Search
 	$.ajax({
-//		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/Audi/S4/2018/MANUAL/PETROL/NSW/12/1",
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/user_cars/" + maker + "/" +model + "/" + year + "/" + transmission + "/" + fuel + "/" + states + "/" + maxDisplay + "/" + page,
 		data: JSON.stringify({
 			client_application_id: 1
