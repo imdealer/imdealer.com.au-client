@@ -192,9 +192,10 @@ function doSignup(){
 			console.log("result!");
 			console.log(result);
 		},
-		error : function( error ) {
+		error : function(  jqXHR, textStatus, errorThrown ) {
 			console.log("error!");
-			console.log( error );
+			console.log( jqXHR );
+			console.log( errorThrown );
 		}
 	});
 }
