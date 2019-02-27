@@ -7,10 +7,31 @@ Signup.prototype.render = function () {
   $(function(){
 	  console.log('Execute Signup.js');
 	  
+	  test();
+	  
 	  bindSignUpEventListener(); // 이벤트 바인딩
 	  
   });
 };
+
+function test(){
+	$("input[name='first_name']").val("test");
+	$("input[name='last_name']").val("test");
+	$("input[name='email']").val("test@gamilc.om");
+	$("input[name='password']").val("123456");
+	$("input[name='confirmPassword']").val("123456");
+	$("input[name='mobile_number']").val("123456");
+	$("input[name='comment']").val();
+	$("input[name='company_name']").val("123");
+	$("input[name='abn']").val("123456789012");
+	$("input[name='dealer_license_number']").val("123");
+	$("input[name='street1']").val("123");
+	$("input[name='street2']").val("123");
+	$("input[name='suburb']").val("123");
+	$("input[name='state']").val("NSW");
+	$("input[name='postcode']").val("123");
+	$("input[name='uploading_file']").val();
+}
 
 /**
  * 유효성 검사
@@ -142,52 +163,76 @@ function checkRequiredField(){
 function doSignup(){
 	console.log("doSignup()");
 	
-	console.log(JSON.stringify({
-		client_application_id: 1,
-		first_name           : $("input[name='first_name']").val(),
-		last_name            : $("input[name='last_name']").val(),
-		email                : $("input[name='email']").val(),
-		password             : $("input[name='password']").val(),
-		mobile_number        : $("input[name='mobile_number']").val(),
-		comment              : $("input[name='comment']").val(),
-		company_name         : $("input[name='company_name']").val(),
-		abn                  : $("input[name='abn']").val(),
-		dealer_license_number: $("input[name='dealer_license_number']").val(),
-		street1              : $("input[name='street1']").val(),
-		street2              : $("input[name='street2']").val(),
-		suburb               : $("input[name='suburb']").val(),
-		state                : $("input[name='state']").val(),
-		postcode             : $("input[name='postcode']").val(),
-		uploading_file       : $("input[name='uploading_file']").val()
-	}));
+//	console.log(JSON.stringify({
+//		client_application_id: 1,
+//		first_name           : $("input[name='first_name']").val(),
+//		last_name            : $("input[name='last_name']").val(),
+//		email                : $("input[name='email']").val(),
+//		password             : $("input[name='password']").val(),
+//		mobile_number        : $("input[name='mobile_number']").val(),
+//		comment              : $("input[name='comment']").val(),
+//		company_name         : $("input[name='company_name']").val(),
+//		abn                  : $("input[name='abn']").val(),
+//		dealer_license_number: $("input[name='dealer_license_number']").val(),
+//		street1              : $("input[name='street1']").val(),
+//		street2              : $("input[name='street2']").val(),
+//		suburb               : $("input[name='suburb']").val(),
+//		state                : $("input[name='state']").val(),
+//		postcode             : $("input[name='postcode']").val(),
+//		uploading_file       : $("input[name='uploading_file']").val()
+//	}));
 	
-	  
+	var formData = new FormData();
+	formData.append('client_application_id', 1);
+	formData.append('first_name'           , $("input[name='first_name']").val()        );
+	formData.append('last_name'            , $("input[name='last_name']").val());
+	formData.append('email', $("input[name='email']").val());
+	formData.append('password', $("input[name='password']").val());
+	formData.append('mobile_number', $("input[name='mobile_number']").val());
+	formData.append('comment', $("input[name='comment']").val());
+	formData.append('company_name', $("input[name='company_name']").val());
+	formData.append('abn', $("input[name='abn']").val());
+	formData.append('dealer_license_number', $("input[name='dealer_license_number']").val());
+	formData.append('street1', $("input[name='street1']").val());
+	formData.append('street2', $("input[name='street2']").val());
+	formData.append('suburb', $("input[name='suburb']").val());
+	formData.append('state', $("input[name='state']").val());
+	formData.append('postcode', $("input[name='postcode']").val());
+	formData.append('uploading_file', $("input[name='uploading_file']").val() );
+	
+	for(var pair of formData.entries()) {
+	   console.log(pair[0]+ ', '+ pair[1]); 
+	}
+	
 	$.ajax({
 		url: "http://aucomimdealer-env.kqbiy3rzcp.ap-southeast-2.elasticbeanstalk.com/api/dev/dealer_signup",
-		data: JSON.stringify({
-			client_application_id: 1,
-			first_name           : $("input[name='first_name']").val(),
-			last_name            : $("input[name='last_name']").val(),
-			email                : $("input[name='email']").val(),
-			password             : $("input[name='password']").val(),
-			mobile_number        : $("input[name='mobile_number']").val(),
-			comment              : $("input[name='comment']").val(),
-			company_name         : $("input[name='company_name']").val(),
-			abn                  : $("input[name='abn']").val(),
-			dealer_license_number: $("input[name='dealer_license_number']").val(),
-			street1              : $("input[name='street1']").val(),
-			street2              : $("input[name='street2']").val(),
-			suburb               : $("input[name='suburb']").val(),
-			state                : $("input[name='state']").val(),
-			postcode             : $("input[name='postcode']").val(),
-			uploading_file       : $("input[name='uploading_file']").val()
-		}),
+//		data: JSON.stringify({
+//			client_application_id: 1,
+//			first_name           : $("input[name='first_name']").val(),
+//			last_name            : $("input[name='last_name']").val(),
+//			email                : $("input[name='email']").val(),
+//			password             : $("input[name='password']").val(),
+//			mobile_number        : $("input[name='mobile_number']").val(),
+//			comment              : $("input[name='comment']").val(),
+//			company_name         : $("input[name='company_name']").val(),
+//			abn                  : $("input[name='abn']").val(),
+//			dealer_license_number: $("input[name='dealer_license_number']").val(),
+//			street1              : $("input[name='street1']").val(),
+//			street2              : $("input[name='street2']").val(),
+//			suburb               : $("input[name='suburb']").val(),
+//			state                : $("input[name='state']").val(),
+//			postcode             : $("input[name='postcode']").val(),
+//			uploading_file       : $("input[name='uploading_file']").val()
+//		}),
+		data: formData,
 		headers: {
-			"Content-Type": "application/json",
+//			"Content-Type": "application/json",
+			"Accept": "text/plain, */*",
 			"Accept": "application/json, text/plain, */*",
 			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
 		},
 		method: "POST",
+		processData: false,
 		success: function(result){
 			console.log("result!");
 			console.log(result);
