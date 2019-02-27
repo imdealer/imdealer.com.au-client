@@ -231,10 +231,10 @@ function doSignup(){
 //			uploading_file       : $("input[name='uploading_file']").val()
 //		}),
 		data: formData,
-//		headers: {
-//			"Accept": "text/plain, */*",
-//			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
-//		},
+		headers: {
+			"Accept": "text/plain, */*",
+			"x-api-key": "5N64T45-4PD48XB-PDTQX5W-Z5K1AT0"
+		},
 		method: "POST",
 		contentType: false,
 		processData: false,
